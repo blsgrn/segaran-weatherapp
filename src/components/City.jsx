@@ -4,7 +4,7 @@ import CityDate from "./CityDate";
 import Sky from "./Sky";
 import Temperature from "./Temperature";
 
-function City() {
+function City({ code }) {
   const [city, setCity] = useState();
   const [date, setDate] = useState();
   const [cloud, setCloud] = useState();
@@ -21,8 +21,8 @@ function City() {
   const [sunsetT, setSunset] = useState();
 
   const api = `bbcb8ad070b251ae782fc83a6754b820`;
-  const cityCode = `1248991`;
-  const base = `https://api.openweathermap.org/data/2.5/weather?id=${cityCode}&appid=${api}`;
+
+  const base = `https://api.openweathermap.org/data/2.5/weather?id=${code}&appid=${api}`;
 
   fetch(base)
     .then((response) => {
@@ -35,9 +35,9 @@ function City() {
       const { temp, temp_min, temp_max, pressure, humidity } = data.main;
       const { speed, deg } = data.wind;
 
-      console.log(country, sunrise, sunset, description, icon);
-      console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
-      console.log(speed, deg);
+      // console.log(country, sunrise, sunset, description, icon);
+      // console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
+      // console.log(speed, deg);
 
       setCity(() => {
         return `${name},${country}`;

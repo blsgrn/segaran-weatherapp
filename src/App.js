@@ -1,14 +1,13 @@
+import React from "react";
 import Header from "./components/Header";
-import City from "./components/City";
+import CityList from "./components/CityList";
+import cityArray from "./data/CityArray";
 
 function App() {
   return (
     <>
       <Header text="Weather App" />
-
-      <div className="container">
-        <City />
-      </div>
+      <CityList arr={cityArray} />
     </>
   );
 }
