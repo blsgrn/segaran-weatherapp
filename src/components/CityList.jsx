@@ -16,11 +16,14 @@ function CityList({ arr }) {
     colorArr.splice(randomNum, 1);
     return color;
   }
+  let gbColor = getColor();
 
   return (
     <div className="city-list">
       {arr.map((codenum) => (
-        <City key={codenum} code={codenum} />
+        <div style={{ backgroundColor: `${gbColor}` }}>
+          <City key={codenum} code={codenum} />
+        </div>
       ))}
     </div>
   );
