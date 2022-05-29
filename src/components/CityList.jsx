@@ -9,7 +9,7 @@ function CityList({ arr }) {
   }
 
   return (
-    <div className="city-list">
+    <div className="card-list">
       {arr.map((codenum) => (
         <City key={codenum} code={codenum} />
       ))}

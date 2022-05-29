@@ -7,6 +7,9 @@
 }
 
 body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: "Oswald", sans-serif;
   font-size: medium;
   color: #fff;
@@ -15,11 +18,12 @@ body {
   background-image: url(./data/weather2.png);
   background-repeat: no-repeat;
 }
-.city-list {
-  max-width: 768px;
-  margin: auto;
-  padding: 0 20px;
-  /* background-color: red; */
+.card-list {
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 header {
@@ -36,10 +40,24 @@ header {
   padding: 0 20px;
 }
 
-.card {
+/* .card {
   color: #333;
   border-radius: 15px;
   padding: 40px 50px;
   margin: 20px 0;
   position: relative;
+} */
+.card {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }

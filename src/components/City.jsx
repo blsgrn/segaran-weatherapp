@@ -3,7 +3,7 @@ import PHV from "./PHV";
 import CityDate from "./CityDate";
 import Sky from "./Sky";
 import Temperature from "./Temperature";
-import Card from "./shared/Card";
+
 // import getColor from "../data/RandomColor";
 
 // const gbColor = getColor();
@@ -26,42 +26,56 @@ function City({ code }) {
   const [sunriseT, setSunrise] = useState();
   const [sunsetT, setSunset] = useState();
 
-  // const api = `bbcb8ad070b251ae782fc83a6754b820`;
+  const api = `bbcb8ad070b251ae782fc83a6754b820`;
 
-  // const base = `https://api.openweathermap.org/data/2.5/weather?id=${code}&appid=${api}`;
+  const base = `https://api.openweathermap.org/data/2.5/weather?id=${code}&appid=${api}`;
 
-  // fetch(base)
-  //   .then((response) => {
-  //     return response.json();
-  //   })
-  //   .then((data) => {
-  //     const { name, visibility } = data;
-  //     const { sunrise, sunset, country } = data.sys;
-  //     const { description, icon } = data.weather[0];
-  //     const { temp, temp_min, temp_max, pressure, humidity } = data.main;
-  //     const { speed, deg } = data.wind;
+  fetch(base)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      const { name, visibility } = data;
+      const { sunrise, sunset, country } = data.sys;
+      const { description, icon } = data.weather[0];
+      const { temp, temp_min, temp_max, pressure, humidity } = data.main;
+      const { speed, deg } = data.wind;
 
-  //     // console.log(country, sunrise, sunset, description, icon);
-  //     // console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
-  //     // console.log(speed, deg);
+      // console.log(country, sunrise, sunset, description, icon);
+      // console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
+      // console.log(speed, deg);
 
-  //     setCity(() => {
-  //       return `${name},${country}`;
-  //     });
-  //     setTemp(temp);
-  //     setTempMax(temp_max);
-  //     setTempMin(temp_min);
-  //     setPressure(pressure);
-  //     setHumidity(humidity);
-  //     setVisibility(visibility);
-  //     setSpeed(speed);
-  //     setDeg(deg);
-  //     setSunrise(sunrise);
-  //     setSunset(sunset);
-  //   });
+      setCity(() => {
+        return `${name},${country}`;
+      });
+      setTemp(temp);
+      setTempMax(temp_max);
+      setTempMin(temp_min);
+      setPressure(pressure);
+      setHumidity(humidity);
+      setVisibility(visibility);
+      setSpeed(speed);
+      setDeg(deg);
+      setSunrise(sunrise);
+      setSunset(sunset);
+    });
 
   function getColor() {
-    var colorArr = ["green", "yellow", "red", "blue", "orange", "pink", "cyan"];
+    var colorArr = [
+      "#afb42b",
+      "#ff77a9",
+      "#b0ff57",
+      "#eeff41",
+      "#519657",
+      "#607d8b",
+      "#ff8a50",
+      "#8e24aa",
+      "#0081cb",
+      "#003d33",
+      "#2962ff",
+      "#dd2c00",
+      "#a30000",
+    ];
     var len = colorArr.length;
     var randomNum = Math.floor(Math.random() * len);
     var color = colorArr[randomNum];
@@ -71,21 +85,19 @@ function City({ code }) {
   let gbColor = getColor();
 
   return (
-    <div style={{ backgroundColor: `${gbColor}` }}>
-      <Card>
-        <CityDate city={city} date={date} />
-        <Sky cloud={cloud} />
-        <Temperature temp={temperature} temp_min={t_min} temp_max={t_max} />
-        <PHV
-          pressure={pres}
-          humidity={hum}
-          visibility={vis}
-          speed={windspeed}
-          deg={winddeg}
-          sunrise={sunriseT}
-          sunset={sunsetT}
-        />
-      </Card>
+    <div className="card" style={{ backgroundColor: `${gbColor}` }}>
+      <CityDate city={city} date={date} />
+      <Sky cloud={cloud} />
+      <Temperature temp={temperature} temp_min={t_min} temp_max={t_max} />
+      <PHV
+        pressure={pres}
+        humidity={hum}
+        visibility={vis}
+        speed={windspeed}
+        deg={winddeg}
+        sunrise={sunriseT}
+        sunset={sunsetT}
+      />
     </div>
   );
 }
