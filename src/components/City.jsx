@@ -60,21 +60,33 @@ function City({ code }) {
   //     setSunset(sunset);
   //   });
 
+  function getColor() {
+    var colorArr = ["green", "yellow", "red", "blue", "orange", "pink", "cyan"];
+    var len = colorArr.length;
+    var randomNum = Math.floor(Math.random() * len);
+    var color = colorArr[randomNum];
+    colorArr.splice(randomNum, 1);
+    return color;
+  }
+  let gbColor = getColor();
+
   return (
-    <Card>
-      <CityDate city={city} date={date} />
-      <Sky cloud={cloud} />
-      <Temperature temp={temperature} temp_min={t_min} temp_max={t_max} />
-      <PHV
-        pressure={pres}
-        humidity={hum}
-        visibility={vis}
-        speed={windspeed}
-        deg={winddeg}
-        sunrise={sunriseT}
-        sunset={sunsetT}
-      />
-    </Card>
+    <div style={{ backgroundColor: `${gbColor}` }}>
+      <Card>
+        <CityDate city={city} date={date} />
+        <Sky cloud={cloud} />
+        <Temperature temp={temperature} temp_min={t_min} temp_max={t_max} />
+        <PHV
+          pressure={pres}
+          humidity={hum}
+          visibility={vis}
+          speed={windspeed}
+          deg={winddeg}
+          sunrise={sunriseT}
+          sunset={sunsetT}
+        />
+      </Card>
+    </div>
   );
 }
 
