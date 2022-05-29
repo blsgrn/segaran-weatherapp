@@ -8,13 +8,14 @@
 
 body {
   font-family: "Oswald", sans-serif;
+  font-size: medium;
   color: #fff;
   width: 100vw;
   height: 100vh;
   background-image: url(./data/weather2.png);
   background-repeat: no-repeat;
 }
-.container {
+.city-list {
   max-width: 768px;
   margin: auto;
   padding: 0 20px;
@@ -29,9 +30,13 @@ header {
   align-items: center;
   margin-bottom: 30px;
 }
+.container {
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
+}
 
-.city {
-  background-color: #fff;
+.card {
   color: #333;
   border-radius: 15px;
   padding: 40px 50px;
