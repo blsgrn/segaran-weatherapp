@@ -1,1 +1,37 @@
-{"coord":{"lon":79.8478,"lat":6.9319},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":299.12,"feels_like":299.12,"temp_min":299.12,"temp_max":299.12,"pressure":1010,"humidity":80,"sea_level":1010,"grnd_level":1009},"visibility":10000,"wind":{"speed":6.65,"deg":227,"gust":8.6},"clouds":{"all":96},"dt":1653878735,"sys":{"type":1,"id":9098,"country":"LK","sunrise":1653870213,"sunset":1653915179},"timezone":19800,"id":1248991,"name":"Colombo","cod":200}
+{
+  "coord": { "lon": 79.8478, "lat": 6.9319 },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 299.12,
+    "feels_like": 299.12,
+    "temp_min": 299.12,
+    "temp_max": 299.12,
+    "pressure": 1010,
+    "humidity": 80,
+    "sea_level": 1010,
+    "grnd_level": 1009
+  },
+  "visibility": 10000,
+  "wind": { "speed": 6.65, "deg": 227, "gust": 8.6 },
+  "clouds": { "all": 96 },
+  "dt": 1653878735,
+  "sys": {
+    "type": 1,
+    "id": 9098,
+    "country": "LK",
+    "sunrise": 1653870213,
+    "sunset": 1653915179
+  },
+  "timezone": 19800,
+  "id": 1248991,
+  "name": "Colombo",
+  "cod": 200
+}

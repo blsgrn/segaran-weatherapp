@@ -3,32 +3,34 @@ import PHV from "./PHV";
 import CityDate from "./CityDate";
 import Sky from "./Sky";
 import Temperature from "./Temperature";
+import { useNavigate } from "react-router-dom";
 
-// import getColor from "../data/RandomColor";
-
-// const gbColor = getColor();
 // style={{ backgroundColor: `${gbColor}` }}
 
 function City({ code }) {
-  // const [gbColor, setGbColor] = useState();
-  const [city, setCity] = useState("Colombo");
-  const [date, setDate] = useState("thursday 12, 2002");
-  const [cloud, setCloud] = useState("few Clouds");
-  const [temperature, setTemp] = useState("34C");
-  const [t_min, setTempMin] = useState("32");
-  const [t_max, setTempMax] = useState("45");
-  const [pres, setPressure] = useState("234");
-  const [hum, setHumidity] = useState("5678");
-  const [vis, setVisibility] = useState("12");
-  const [windspeed, setSpeed] = useState("34km/s");
-  const [winddeg, setDeg] = useState("25deg");
+  const [city, setCity] = useState("Colombo, LK");
 
-  const [sunriseT, setSunrise] = useState();
-  const [sunsetT, setSunset] = useState();
+  const [cloud, setCloud] = useState("04d");
+  const [description, setDescription] = useState();
+
+  const [temperature, setTemp] = useState(299.12);
+  const [t_min, setTempMin] = useState(299.12);
+  const [t_max, setTempMax] = useState(299.12);
+
+  const [pres, setPressure] = useState(1010);
+  const [hum, setHumidity] = useState(80);
+  const [vis, setVisibility] = useState(10000);
+  const [windspeed, setSpeed] = useState(6.65);
+  const [winddeg, setDeg] = useState(227);
+
+  const [sunriseT, setSunrise] = useState(1653870213);
+  const [sunsetT, setSunset] = useState(1653915179);
+
+  const navigate = useNavigate();
 
   const api = `bbcb8ad070b251ae782fc83a6754b820`;
 
-  const base = `https://api.openweathermap.org/data/2.5/weather?id=${code}&appid=${api}`;
+  const base = `https://api.opeweathermap.org/data/2.5/weather?id=${code}&units=metric&appid=${api}`;
 
   fetch(base)
     .then((response) => {
@@ -41,24 +43,36 @@ function City({ code }) {
       const { temp, temp_min, temp_max, pressure, humidity } = data.main;
       const { speed, deg } = data.wind;
 
-      // console.log(country, sunrise, sunset, description, icon);
-      // console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
-      // console.log(speed, deg);
+      console.log(country, sunrise, sunset, description, icon);
+      console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
+      console.log(speed, deg);
+
+      const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+      const sunriseGMT = new Date(sunrise * 1000);
+      const sunsetGMT = new Date(sunset * 1000);
 
       setCity(() => {
-        return `${name},${country}`;
+        return `${name}, ${country}`;
       });
+      setCloud(iconUrl);
+      setDescription(description);
+
       setTemp(temp);
-      setTempMax(temp_max);
       setTempMin(temp_min);
+      setTempMax(temp_max);
+
       setPressure(pressure);
       setHumidity(humidity);
       setVisibility(visibility);
       setSpeed(speed);
       setDeg(deg);
-      setSunrise(sunrise);
-      setSunset(sunset);
+      setSunrise(sunriseGMT);
+      setSunset(sunsetGMT);
     });
+
+  function handleClick() {
+    navigate(`/city`);
+  }
 
   function getColor() {
     var colorArr = [
@@ -85,10 +99,14 @@ function City({ code }) {
   let gbColor = getColor();
 
   return (
-    <div className="card" style={{ backgroundColor: `${gbColor}` }}>
-      <CityDate city={city} date={date} />
-      <Sky cloud={cloud} />
-      <Temperature temp={temperature} temp_min={t_min} temp_max={t_max} />
+    <div
+      className="card"
+      style={{ backgroundColor: `${gbColor}` }}
+      onClick={() => handleClick()}
+    >
+      <CityDate city={city} />
+      <Sky cloud={cloud} description={description} />
+      <Temperature temp={temperature} t_min={t_min} t_max={t_max} />
       <PHV
         pressure={pres}
         humidity={hum}

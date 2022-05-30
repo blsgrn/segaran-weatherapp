@@ -2,8 +2,11 @@ import React from "react";
 import { ImCompass } from "react-icons/im";
 
 function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
+  // const sunriseTLocal = sunriseT.toLocaleTimeString();
+  // const sunsetTLocal = sunsetT.toLocaleTimeString();
+
   return (
-    <>
+    <div className="phvwindsun">
       <div className="phv">
         <div id="pressure"> {pres}</div>
         <div id="humidity">{hum}</div>
@@ -19,7 +22,7 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
         <div id="sunset">{sunsetT}</div>
       </div>
       <div />
-    </>
+    </div>
   );
 }
 

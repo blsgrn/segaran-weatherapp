@@ -20,10 +20,10 @@ body {
 }
 .card-list {
   width: 85vw;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  margin: 6px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header {
@@ -48,6 +48,10 @@ header {
   position: relative;
 } */
 .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   border: 1px solid grey;
   border-radius: 5px;
   padding: 25px;
@@ -69,4 +73,8 @@ header {
   width: 150px;
   line-height: 30px;
   margin-bottom: 30px;
+}
+.temperature-display {
+  display: flex;
+  flex-direction: column;
 }
