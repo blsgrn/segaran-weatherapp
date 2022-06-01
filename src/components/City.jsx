@@ -3,30 +3,28 @@ import PHV from "./PHV";
 import Colorized from "./Colorized";
 
 function City({ code }) {
-  const [city, setCity] = useState("Colombo");
-  const [country, setCountry] = useState("LK");
+  const [city, setCity] = useState();
+  const [country, setCountry] = useState();
 
-  const [cloud, setCloud] = useState("04d");
-  const [description, setDescription] = useState("few clouds");
+  const [cloud, setCloud] = useState();
+  const [description, setDescription] = useState();
 
-  const [temperature, setTemp] = useState("299.12");
-  const [t_min, setTempMin] = useState(299.12);
-  const [t_max, setTempMax] = useState(299.12);
+  const [temperature, setTemp] = useState();
+  const [t_min, setTempMin] = useState();
+  const [t_max, setTempMax] = useState();
 
-  const [pres, setPressure] = useState("1010");
-  const [hum, setHumidity] = useState(80);
-  const [vis, setVisibility] = useState(10000);
-  const [windspeed, setSpeed] = useState(6.65);
-  const [winddeg, setDeg] = useState(227);
+  const [pres, setPressure] = useState();
+  const [hum, setHumidity] = useState();
+  const [vis, setVisibility] = useState();
+  const [windspeed, setSpeed] = useState();
+  const [winddeg, setDeg] = useState();
 
-  const [sunriseT, setSunrise] = useState(1653870213);
-  const [sunsetT, setSunset] = useState(1653915179);
+  const [sunriseT, setSunrise] = useState();
+  const [sunsetT, setSunset] = useState();
 
   const api = `bbcb8ad070b251ae782fc83a6754b820`;
 
-  //  ./pic/2.5/weather?id=1850147&units=metric&appid=bbcb8ad070b251ae782fc83a6754b820
-
-  const base = `./pic2.5/weather?id=${code}&units=metric&appid=${api}`;
+  const base = `https://api.opennnweathermap.org/data/2.5/weather?id=${code}&appid=${api}`;
 
   fetch(base)
     .then((response) => {
@@ -47,27 +45,22 @@ function City({ code }) {
       const sunriseGMT = new Date(sunrise * 1000);
       const sunsetGMT = new Date(sunset * 1000);
 
-      // How to set two data got from API as one prop
-      // setCity(() => {
-      //   return `${name}, ${country}`;
-      // });
+      setCity(name);
+      setCountry(country);
+      setCloud(iconUrl);
+      setDescription(description);
 
-      // setCity(name);
-      // setCountry(country);
-      // setCloud(iconUrl);
-      // setDescription(description);
+      setTemp(temp);
+      setTempMin(temp_min);
+      setTempMax(temp_max);
 
-      // setTemp(temp);
-      // setTempMin(temp_min);
-      // setTempMax(temp_max);
-
-      // setPressure(pressure);
-      // setHumidity(humidity);
-      // setVisibility(visibility);
-      // setSpeed(speed);
-      // setDeg(deg);
-      // setSunrise(sunriseGMT);
-      // setSunset(sunsetGMT);
+      setPressure(pressure);
+      setHumidity(humidity);
+      setVisibility(visibility);
+      setSpeed(speed);
+      setDeg(deg);
+      setSunrise(sunriseGMT);
+      setSunset(sunsetGMT);
     });
 
   // function handleClick() {
