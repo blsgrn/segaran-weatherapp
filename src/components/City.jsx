@@ -7,13 +7,13 @@ function City({ code }) {
   const [country, setCountry] = useState("LK");
 
   const [cloud, setCloud] = useState("04d");
-  const [description, setDescription] = useState();
+  const [description, setDescription] = useState("few clouds");
 
-  const [temperature, setTemp] = useState(299.12);
+  const [temperature, setTemp] = useState("299.12");
   const [t_min, setTempMin] = useState(299.12);
   const [t_max, setTempMax] = useState(299.12);
 
-  const [pres, setPressure] = useState(1010);
+  const [pres, setPressure] = useState("1010");
   const [hum, setHumidity] = useState(80);
   const [vis, setVisibility] = useState(10000);
   const [windspeed, setSpeed] = useState(6.65);
@@ -52,22 +52,22 @@ function City({ code }) {
       //   return `${name}, ${country}`;
       // });
 
-      setCity(name);
-      setCountry(country);
-      setCloud(iconUrl);
-      setDescription(description);
+      // setCity(name);
+      // setCountry(country);
+      // setCloud(iconUrl);
+      // setDescription(description);
 
-      setTemp(temp);
-      setTempMin(temp_min);
-      setTempMax(temp_max);
+      // setTemp(temp);
+      // setTempMin(temp_min);
+      // setTempMax(temp_max);
 
-      setPressure(pressure);
-      setHumidity(humidity);
-      setVisibility(visibility);
-      setSpeed(speed);
-      setDeg(deg);
-      setSunrise(sunriseGMT);
-      setSunset(sunsetGMT);
+      // setPressure(pressure);
+      // setHumidity(humidity);
+      // setVisibility(visibility);
+      // setSpeed(speed);
+      // setDeg(deg);
+      // setSunrise(sunriseGMT);
+      // setSunset(sunsetGMT);
     });
 
   // function handleClick() {
