@@ -7,57 +7,57 @@
 }
 
 body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "Oswald", sans-serif;
-  font-size: medium;
-  color: #fff;
-  width: 100vw;
-  height: 100vh;
-  background-image: url(./data/weather2.png);
+  background: url(./data/colorclouds/Weather1.png);
   background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Barlow", sans-serif;
 }
-.card-list {
-  width: 85vw;
-  margin: 6px auto;
+
+.app-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  flex-direction: column;
 }
 
 header {
-  height: 70px;
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin-bottom: 30px;
-}
-.container {
-  max-width: 768px;
-  margin: auto;
-  padding: 0 20px;
+  border: 2px solid red;
 }
 
-/* .card {
-  color: #333;
-  border-radius: 15px;
-  padding: 40px 50px;
-  margin: 20px 0;
-  position: relative;
-} */
+.search {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid blue;
+}
+
+.cities-container {
+  max-width: 1000px;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 3px solid green;
+}
+
 .card {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-
-  border: 1px solid grey;
-  border-radius: 5px;
-  padding: 25px;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* opacity: 0.5; */
+  height: 300px;
+  width: 400px;
+  border: 2px solid rgb(27, 7, 99);
+  margin: 30px;
+  border-radius: 8px;
+  padding: 2px;
   cursor: pointer;
-  -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
 }
@@ -65,16 +65,37 @@ header {
 .card:hover {
   transform: scale(1.03);
 }
-.search {
-  -webkit-appearance: none;
-  border: none;
-  outline: none;
-  padding: 10px;
-  width: 150px;
-  line-height: 30px;
-  margin-bottom: 30px;
+
+.colorized {
+  flex: 2;
+  background: url(./data/colorclouds/bgCloud.png);
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.phvwindsun {
+  flex: 1;
+  width: 100%;
 }
 .temperature-display {
   display: flex;
   flex-direction: column;
+}
+.footer {
+  padding: 8px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f2937;
 }

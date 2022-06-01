@@ -1,6 +1,6 @@
 import React from "react";
 
-function Temperature({ temp, t_min, t_max }) {
+function Temperature({ temp, min, max }) {
   return (
     <div className="temperature-display">
       <div className="temp-display">
@@ -12,13 +12,13 @@ function Temperature({ temp, t_min, t_max }) {
       <div className="temp-min-max">
         <div className="temp-min">
           <p>
-            {`${t_min} `}
+            {`${min} `}
             <sup>O</sup>C
           </p>
         </div>
         <div className="temp-max">
           <p>
-            {`${t_max} `}
+            {`${max} `}
             <sup>O</sup>C
           </p>
         </div>

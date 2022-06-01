@@ -1,6 +1,6 @@
 import React from "react";
 
-function CityDate({ city }) {
+function CityDate({ city, country }) {
   let today = new Date();
 
   let months = [
@@ -36,7 +36,7 @@ function CityDate({ city }) {
 
   return (
     <div className="city-day">
-      <div className="city-display">{city}</div>
+      <div className="city-display">{`${city}, ${country}`}</div>
       <div className="date-display">{todaysTimeDateMonth}</div>
     </div>
   );

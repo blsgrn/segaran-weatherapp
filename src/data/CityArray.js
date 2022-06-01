@@ -9,4 +9,5 @@ for (let i = 0; i < mainList.length; i++) {
   cityArray.push(mainList[i].CityCode);
 }
 console.log(cityArray);
+
 export default cityArray;

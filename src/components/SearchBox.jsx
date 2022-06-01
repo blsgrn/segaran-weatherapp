@@ -2,12 +2,9 @@ import React from "react";
 
 function SearchBox({ placeholder, handleChange }) {
   return (
-    <input
-      className="search"
-      type="search"
-      placeholder={placeholder}
-      onChange={handleChange}
-    />
+    <div className="search">
+      <input type="search" placeholder={placeholder} onChange={handleChange} />
+    </div>
   );
 }
 
