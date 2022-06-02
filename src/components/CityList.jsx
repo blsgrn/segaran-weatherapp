@@ -9,8 +9,8 @@ function CityList() {
 
   return (
     <div className="cities-container">
-      {CityArray.map((codenum) => (
-        <City key={codenum} code={codenum} />
+      {CityArray.map((codenum, index) => (
+        <City key={index} code={codenum} />
       ))}
     </div>
   );

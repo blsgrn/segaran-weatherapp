@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PHV from "./PHV";
 import Colorized from "./Colorized";
+import { getWeather } from "../services/List";
 
 function City({ code }) {
   const [city, setCity] = useState();
@@ -25,47 +26,46 @@ function City({ code }) {
   const [weather, setWeather] = useState({});
 
   useEffect(() => {
-    const api = `bbcb8ad070b251ae782fc83a6754b820`;
-    const base = `https://api.opennweathermapp.org/data/2.5/weather?id=${code}&appid=${api}`;
-    fetch(base)
-      .then((response) => response.json())
-      .then((result) => {
-        setWeather(result);
-
-        // const { name, visibility } = result;
-        // const { sunrise, sunset, country } = result.sys;
-        // const { description, icon } = result.weather[0];
-        // const { temp, temp_min, temp_max, pressure, humidity } = result.main;
-        // const { speed, deg } = result.wind;
-
-        // console.log(country, sunrise, sunset, description, icon);
-        // console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
-        // console.log(speed, deg);
-        // console.log(result);
-
-        // const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-        // const sunriseGMT = new Date(sunrise * 1000);
-        // const sunsetGMT = new Date(sunset * 1000);
-
-        // setCity(name);
-        // setCountry(country);
-        // setCloud(iconUrl);
-        // setDescription(description);
-
-        // setTemp(temp);
-        // setTempMin(temp_min);
-        // setTempMax(temp_max);
-
-        // setPressure(pressure);
-        // setHumidity(humidity);
-        // setVisibility(visibility);
-        // setSpeed(speed);
-        // setDeg(deg);
-        // setSunrise(sunriseGMT);
-        // setSunset(sunsetGMT);
-      })
-      .catch((error) => console.log(error));
+    let mounted = true;
+    getWeather(code).then((items) => {
+      if (mounted) {
+        setWeather(items);
+      }
+    });
+    return () => (mounted = false);
   }, [code]);
+
+  // const { name, visibility } = result;
+  // const { sunrise, sunset, country } = result.sys;
+  // const { description, icon } = result.weather[0];
+  // const { temp, temp_min, temp_max, pressure, humidity } = result.main;
+  // const { speed, deg } = result.wind;
+
+  // console.log(country, sunrise, sunset, description, icon);
+  // console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
+  // console.log(speed, deg);
+  // console.log(result);
+
+  // const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  // const sunriseGMT = new Date(sunrise * 1000);
+  // const sunsetGMT = new Date(sunset * 1000);
+
+  // setCity(name);
+  // setCountry(country);
+  // setCloud(iconUrl);
+  // setDescription(description);
+
+  // setTemp(temp);
+  // setTempMin(temp_min);
+  // setTempMax(temp_max);
+
+  // setPressure(pressure);
+  // setHumidity(humidity);
+  // setVisibility(visibility);
+  // setSpeed(speed);
+  // setDeg(deg);
+  // setSunrise(sunriseGMT);
+  // setSunset(sunsetGMT);
 
   console.log(weather);
 
