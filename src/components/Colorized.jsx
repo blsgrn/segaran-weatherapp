@@ -4,8 +4,8 @@ import Sky from "./Sky";
 import Temperature from "./Temperature";
 
 function Colorized({ city, country, cloud, description, temp, min, max }) {
-  function getColor() {
-    var colorArr = [
+  const getColor = () => {
+    let colorArr = [
       "rgba(215, 255, 71, 0.4)",
       "rgba(71, 255, 86, 0.4)",
       "rgba(71, 249, 255, 0.4)",
@@ -13,15 +13,14 @@ function Colorized({ city, country, cloud, description, temp, min, max }) {
       "rgba(255, 71, 117, 0.4)",
       "rgba(27, 7, 99, 0.4)",
     ];
-    var len = colorArr.length;
-    var randomNum = Math.floor(Math.random() * len);
-    var color = colorArr[randomNum];
+    let len = colorArr.length;
+    let randomNum = Math.floor(Math.random() * len);
+    let color = colorArr[randomNum];
     colorArr.splice(randomNum, 1);
     return color;
-  }
-  let gbColor = getColor();
-  // let transColor = "rgba(255,0,0,0.4)";
+  };
 
+  let gbColor = getColor();
   return (
     <div
       className="colorized"

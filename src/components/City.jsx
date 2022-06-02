@@ -26,7 +26,7 @@ function City({ code }) {
 
   useEffect(() => {
     const api = `bbcb8ad070b251ae782fc83a6754b820`;
-    const base = `https://api.openweathermap.org/data/2.5/weather?id=${code}&appid=${api}`;
+    const base = `https://api.opennweathermapp.org/data/2.5/weather?id=${code}&appid=${api}`;
     fetch(base)
       .then((response) => response.json())
       .then((result) => {

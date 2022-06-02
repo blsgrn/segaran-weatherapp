@@ -1,16 +1,15 @@
 import React from "react";
 import City from "./City";
+import CityArray from "../data/CityArray";
 
-// import getColor from "../data/RandomColor";
-
-function CityList({ arr }) {
-  if (!arr || arr.length === 0) {
+function CityList() {
+  if (!CityArray || CityArray.length === 0) {
     return <p>No City Available</p>;
   }
 
   return (
     <div className="cities-container">
-      {arr.map((codenum) => (
+      {CityArray.map((codenum) => (
         <City key={codenum} code={codenum} />
       ))}
     </div>

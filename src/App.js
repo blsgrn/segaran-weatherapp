@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import SearchBox from "./components/SearchBox";
 import CityList from "./components/CityList";
-import cityArray from "./data/CityArray";
+
 import Footer from "./components/Footer";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ function App() {
       <SearchBox placeholder="Enter a city" handleChange={handleChange} />
       <div className="app-wrapper">
         <div className="container-wrap">
-          <CityList arr={cityArray} />
+          <CityList />
         </div>
         <Footer footer="Fidenz" />
       </div>
