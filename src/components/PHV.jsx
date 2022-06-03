@@ -22,7 +22,7 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
   let riseTime = formatAMPM(sunriseT);
   let setTime = formatAMPM(sunsetT);
 
-  console.log(riseTime);
+  // console.log(riseTime);
   return (
     <div className="phvwindsun">
       <div className="phv">
