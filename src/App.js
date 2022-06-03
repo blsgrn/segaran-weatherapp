@@ -26,7 +26,7 @@ function App() {
           <CityList />
         </div>
       </div>
-      <Footer footer="Fidenz" />
+      <Footer ftText="Fidenz®" />
     </>
   );
 }

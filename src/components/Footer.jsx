@@ -1,6 +1,6 @@
 import React from "react";
 
-function Footer({ footer, ftColor, ftFontSize }) {
+function Footer({ ftText, ftColor, ftFontSize }) {
   const footerStyles = {
     color: ftColor,
     fontSize: ftFontSize,
@@ -8,14 +8,14 @@ function Footer({ footer, ftColor, ftFontSize }) {
 
   return (
     <footer className="footer" style={footerStyles}>
-      {footer}
+      {ftText}
     </footer>
   );
 }
 
 Footer.defaultProps = {
-  flex: 1,
+  ftText: "Company Name®",
   ftColor: "#fff",
-  ftFontSize: "12px",
+  ftFontSize: "16px",
 };
 export default Footer;
