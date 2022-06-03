@@ -35,39 +35,38 @@ function City({ code }) {
     return () => (mounted = false);
   }, [code]);
 
-  // const { name, visibility } = result;
-  // const { sunrise, sunset, country } = result.sys;
-  // const { description, icon } = result.weather[0];
-  // const { temp, temp_min, temp_max, pressure, humidity } = result.main;
-  // const { speed, deg } = result.wind;
+  const { name, visibility } = weather;
+  const { sunrise, sunset, country } = weather.sys;
+  const { description, icon } = weather.weather[0];
+  const { temp, temp_min, temp_max, pressure, humidity } = weather.main;
+  const { speed, deg } = weather.wind;
 
-  // console.log(country, sunrise, sunset, description, icon);
-  // console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
-  // console.log(speed, deg);
-  // console.log(result);
+  // console.log(weather);
+  console.log(name, visibility);
+  console.log(country, sunrise, sunset, description, icon);
+  console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
+  console.log(speed, deg);
 
-  // const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-  // const sunriseGMT = new Date(sunrise * 1000);
-  // const sunsetGMT = new Date(sunset * 1000);
+  const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  const sunriseGMT = new Date(sunrise * 1000);
+  const sunsetGMT = new Date(sunset * 1000);
 
-  // setCity(name);
-  // setCountry(country);
-  // setCloud(iconUrl);
-  // setDescription(description);
+  setCity(name);
+  setCountry(country);
+  setCloud(iconUrl);
+  setDescription(description);
 
-  // setTemp(temp);
-  // setTempMin(temp_min);
-  // setTempMax(temp_max);
+  setTemp(temp);
+  setTempMin(temp_min);
+  setTempMax(temp_max);
 
-  // setPressure(pressure);
-  // setHumidity(humidity);
-  // setVisibility(visibility);
-  // setSpeed(speed);
-  // setDeg(deg);
-  // setSunrise(sunriseGMT);
-  // setSunset(sunsetGMT);
-
-  console.log(weather);
+  setPressure(pressure);
+  setHumidity(humidity);
+  setVisibility(visibility);
+  setSpeed(speed);
+  setDeg(deg);
+  setSunrise(sunriseGMT);
+  setSunset(sunsetGMT);
 
   return (
     <div className="card">
