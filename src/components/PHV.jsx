@@ -2,6 +2,27 @@ import React from "react";
 import { ImCompass } from "react-icons/im";
 
 function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
+  // let setTime = `${sunsetT.toLocaleTimeString()}`;
+  // let setTime = `${sunsetT.toLocaleDateString()}, ${sunsetT.toLocaleTimeString()}`;
+
+  // let riseTime = `${sunriseT.toLocaleTimeString()}`;
+  // let riseTime = `${sunriseT.toLocaleDateString()}, ${sunriseT.toLocaleTimeString()}`;
+
+  function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? "pm" : "am";
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    var strTime = hours + ":" + minutes + ampm;
+    return strTime;
+  }
+
+  let riseTime = formatAMPM(sunriseT);
+  let setTime = formatAMPM(sunsetT);
+
+  console.log(riseTime);
   return (
     <div className="phvwindsun">
       <div className="phv">
@@ -43,8 +64,8 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
         </div>
       </div>
       <div className="sun">
-        <div id="sunrise">{sunriseT}</div>
-        <div id="sunset">{sunsetT}</div>
+        <div id="sunrise">{riseTime}</div>
+        <div id="sunset">{setTime}</div>
       </div>
       <div />
     </div>

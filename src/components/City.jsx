@@ -20,8 +20,8 @@ function City({ code }) {
   const [windspeed, setSpeed] = useState(6.65);
   const [winddeg, setDeg] = useState(227);
 
-  const [sunriseT, setSunrise] = useState(1653870213);
-  const [sunsetT, setSunset] = useState(1653915179);
+  const [sunriseT, setSunrise] = useState(() => new Date(1653870213));
+  const [sunsetT, setSunset] = useState(() => new Date(1653915179));
 
   const [weather, setWeather] = useState({});
 
@@ -42,8 +42,8 @@ function City({ code }) {
         setVisibility(data.visibility);
         setSpeed(data.wind.speed);
         setDeg(data.wind.deg);
-        setSunrise(data.sys.sunrise);
-        setSunset(data.sys.sunset);
+        setSunrise(() => new Date(data.sys.sunrise * 1000));
+        setSunset(() => new Date(data.sys.sunset * 1000));
       }
     });
     return () => (mounted = false);
