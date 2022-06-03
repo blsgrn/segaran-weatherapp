@@ -8,7 +8,7 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
         <div id="pressure">
           <h4>Pressure:</h4>
           <span
-            style={{ padding: "2px", fontSize: "16px", fontWeight: "normal" }}
+            style={{ padding: "0 5px", fontSize: "16px", fontWeight: "normal" }}
           >
             {pres}
           </span>
@@ -17,7 +17,7 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
         <div id="humidity">
           <h4>Humidity:</h4>
           <span
-            style={{ padding: "2px", fontSize: "16px", fontWeight: "normal" }}
+            style={{ padding: "0 5px", fontSize: "16px", fontWeight: "normal" }}
           >
             {hum}
           </span>
@@ -25,7 +25,7 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
         <div id="visibility">
           <h4>Visibility:</h4>
           <span
-            style={{ padding: "2px", fontSize: "16px", fontWeight: "normal" }}
+            style={{ padding: "0 5px", fontSize: "16px", fontWeight: "normal" }}
           >
             {vis}
           </span>

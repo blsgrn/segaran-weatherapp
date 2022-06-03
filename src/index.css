@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 * {
   box-sizing: border-box;
@@ -10,7 +10,7 @@ body {
   background: url(./data/colorclouds/Weather1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: "Barlow", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .app-wrapper {

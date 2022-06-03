@@ -3,10 +3,16 @@ import React from "react";
 function Temperature({ temperature, t_min, t_max }) {
   return (
     <div className="temperature-display">
-      <div className="temp-display">
+      <div
+        style={{
+          fontSize: "48px",
+          fontWeight: "bold",
+        }}
+        className="temp-display"
+      >
         <p>
           {`${temperature} `}
-          <sup>O</sup>C
+          <sup style={{ fontSize: "18px" }}>O</sup>C
         </p>
       </div>
       <div className="temp-min-max">
