@@ -8,7 +8,9 @@ function Sky({ cloud, desc }) {
       <div className="sky-display">
         <img src={iconUrl} alt="cloud-img" />
       </div>
-      <div className="cloud-desc"> {desc}</div>
+      <div style={{ marginBottom: "6px" }} className="cloud-desc">
+        {desc}
+      </div>
     </div>
   );
 }

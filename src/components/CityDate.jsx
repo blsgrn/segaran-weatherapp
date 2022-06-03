@@ -36,7 +36,10 @@ function CityDate({ city, nation }) {
 
   return (
     <div className="city-day">
-      <div className="city-display">{`${city}, ${nation}`}</div>
+      <div
+        style={{ marginTop: "6px", fontSize: "20px", fontWeight: "bold" }}
+        className="city-display"
+      >{`${city}, ${nation}`}</div>
       <div className="date-display">{todaysTimeDateMonth}</div>
     </div>
   );

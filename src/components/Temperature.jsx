@@ -19,13 +19,13 @@ function Temperature({ temperature, t_min, t_max }) {
         <div className="temp-min">
           <p>
             {`${t_min} `}
-            <sup>O</sup>C
+            <sup style={{ fontSize: "8px" }}>O</sup>C
           </p>
         </div>
         <div className="temp-max">
           <p>
             {`${t_max} `}
-            <sup>O</sup>C
+            <sup style={{ fontSize: "8px" }}>O</sup>C
           </p>
         </div>
       </div>

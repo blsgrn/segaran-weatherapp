@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-appearance: none;
 }
 
 body {
@@ -11,6 +12,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #fff;
 }
 
 .app-wrapper {
@@ -21,26 +24,36 @@ body {
 }
 
 header {
+  font-size: 35px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid rgb(66, 4, 4);
   margin: 6px 0;
 }
-.app-heading {
-  margin: 0 20px;
+
+.search {
+  text-align: center;
 }
+
+input {
+  padding: 7px 14px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #6d6d6d;
+  background-color: #424242;
+}
+input:focus {
+  outline: none;
+}
+
 .icon-container {
-  flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border: 2px solid yellow;
   position: relative;
 }
-.cloud-icon {
-  border: 2px solid red;
-}
+
 .sun-icon {
   z-index: -1;
   right: 25px;
@@ -48,14 +61,8 @@ header {
   position: absolute;
 }
 .app-heading {
-  flex: 1;
   padding: 12px;
   margin: 8px 6px;
-}
-.search {
-  display: flex;
-  justify-content: space-around;
-  border: 2px solid rgb(8, 85, 18);
 }
 
 .cities-container {
@@ -65,7 +72,6 @@ header {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border: 3px solid green;
 }
 
 .card {
@@ -75,11 +81,9 @@ header {
   flex-direction: column;
   background-repeat: no-repeat;
   background-size: cover;
-  /* opacity: 0.5; */
   height: 300px;
   width: 400px;
-  border: 2px solid rgb(27, 7, 99);
-  margin: 30px;
+  margin: 8px;
   border-radius: 8px;
   padding: 2px;
   cursor: pointer;
@@ -118,6 +122,11 @@ header {
   align-items: center;
   flex-direction: column;
 }
+.date-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .sky-display {
   z-index: 3;
 }
@@ -149,6 +158,21 @@ header {
   z-index: 2;
   display: flex;
   flex-direction: column;
+}
+
+.wind {
+  border-left: 0.5px solid #fff;
+  border-right: 0.5px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wind-data {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .footer {
   font-size: 12rem;

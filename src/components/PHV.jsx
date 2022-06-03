@@ -8,7 +8,7 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
         <div id="pressure">
           <h4>Pressure:</h4>
           <span
-            style={{ padding: "0 5px", fontSize: "16px", fontWeight: "normal" }}
+            style={{ padding: "0 5px", fontSize: "14px", fontWeight: "normal" }}
           >
             {pres}
           </span>
@@ -17,7 +17,7 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
         <div id="humidity">
           <h4>Humidity:</h4>
           <span
-            style={{ padding: "0 5px", fontSize: "16px", fontWeight: "normal" }}
+            style={{ padding: "0 5px", fontSize: "14px", fontWeight: "normal" }}
           >
             {hum}
           </span>
@@ -25,7 +25,7 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
         <div id="visibility">
           <h4>Visibility:</h4>
           <span
-            style={{ padding: "0 5px", fontSize: "16px", fontWeight: "normal" }}
+            style={{ padding: "0 5px", fontSize: "14px", fontWeight: "normal" }}
           >
             {vis}
           </span>
@@ -33,8 +33,14 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
       </div>
       <div className="wind">
         <ImCompass size={28} />
-        <div id="wind-speed">{windspeed}</div>
-        <div id="wind-deg">{winddeg}</div>
+        <div className="wind-data">
+          <div style={{ padding: "2px 3px" }} id="wind-speed">
+            {windspeed} m/s
+          </div>
+          <div style={{ padding: "2px 3px" }} id="wind-deg">
+            {winddeg} Degree
+          </div>
+        </div>
       </div>
       <div className="sun">
         <div id="sunrise">{sunriseT}</div>
