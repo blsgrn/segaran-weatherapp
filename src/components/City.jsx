@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PHV from "./PHV";
 import Colorized from "./Colorized";
-import { getWeather } from "../services/List";
+import { getWeather } from "../services/APIWeatherData";
 
 function City({ code }) {
   const [capital, setCapital] = useState("Colombo");
