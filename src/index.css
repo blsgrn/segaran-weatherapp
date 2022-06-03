@@ -22,11 +22,36 @@ body {
 
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   border: 2px solid rgb(66, 4, 4);
+  margin: 6px 0;
 }
-
+.app-heading {
+  margin: 0 20px;
+}
+.icon-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 2px solid yellow;
+  position: relative;
+}
+.cloud-icon {
+  border: 2px solid red;
+}
+.sun-icon {
+  z-index: -1;
+  right: 25px;
+  bottom: 15px;
+  position: absolute;
+}
+.app-heading {
+  flex: 1;
+  padding: 12px;
+  margin: 8px 6px;
+}
 .search {
   display: flex;
   justify-content: space-around;
@@ -97,12 +122,28 @@ header {
   z-index: 3;
 }
 .phvwindsun {
+  color: #eeeeee;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #212121;
   flex: 3;
   width: 100%;
+}
+#humidity {
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+#pressure {
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+#visibility {
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
 }
 .temperature-display {
   z-index: 2;
@@ -117,5 +158,5 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #1f2937;
+  background-color: #1b1b1b;
 }

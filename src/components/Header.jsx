@@ -10,9 +10,15 @@ function Header({ text, textColor }) {
 
   return (
     <header style={headerStyles}>
-      <ImSun color="#eeff41" size={28} />
-      <ImCloud color="#0288d1" size={42} />
-      {text}
+      <div className="icon-container">
+        <div className="sun-icon">
+          <ImSun color="#eeff41" size={28} />
+        </div>
+        <div className="cloud-icon">
+          <ImCloud color="#2979ff" size={42} />
+        </div>
+      </div>
+      <div className="app-heading">{text}</div>
     </header>
   );
 }

@@ -6,10 +6,30 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
     <div className="phvwindsun">
       <div className="phv">
         <div id="pressure">
-          <h3>Pressure: {pres}</h3>
+          <h4>Pressure:</h4>
+          <span
+            style={{ padding: "2px", fontSize: "16px", fontWeight: "normal" }}
+          >
+            {pres}
+          </span>
         </div>
-        <div id="humidity">{hum}</div>
-        <div id="visibility">{vis}</div>
+
+        <div id="humidity">
+          <h4>Humidity:</h4>
+          <span
+            style={{ padding: "2px", fontSize: "16px", fontWeight: "normal" }}
+          >
+            {hum}
+          </span>
+        </div>
+        <div id="visibility">
+          <h4>Visibility:</h4>
+          <span
+            style={{ padding: "2px", fontSize: "16px", fontWeight: "normal" }}
+          >
+            {vis}
+          </span>
+        </div>
       </div>
       <div className="wind">
         <ImCompass size={28} />
