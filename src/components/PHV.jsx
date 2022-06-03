@@ -1,24 +1,24 @@
 import React from "react";
 import { ImCompass } from "react-icons/im";
 
-function PHV({ pressure, humidity, visibility, speed, deg, sunrise, sunset }) {
+function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
   return (
     <div className="phvwindsun">
       <div className="phv">
         <div id="pressure">
-          <h3>Pressure: {pressure}</h3>
+          <h3>Pressure: {pres}</h3>
         </div>
-        <div id="humidity">{humidity}</div>
-        <div id="visibility">{visibility}</div>
+        <div id="humidity">{hum}</div>
+        <div id="visibility">{vis}</div>
       </div>
       <div className="wind">
         <ImCompass size={28} />
-        <div id="wind-speed">{speed}</div>
-        <div id="wind-deg">{deg}</div>
+        <div id="wind-speed">{windspeed}</div>
+        <div id="wind-deg">{winddeg}</div>
       </div>
       <div className="sun">
-        <div id="sunrise">{sunrise}</div>
-        <div id="sunset">{sunset}</div>
+        <div id="sunrise">{sunriseT}</div>
+        <div id="sunset">{sunsetT}</div>
       </div>
       <div />
     </div>

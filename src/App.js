@@ -25,8 +25,8 @@ function App() {
         <div className="container-wrap">
           <CityList />
         </div>
-        <Footer footer="Fidenz" />
       </div>
+      <Footer footer="Fidenz" />
     </>
   );
 }

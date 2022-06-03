@@ -24,13 +24,13 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid red;
+  border: 2px solid rgb(66, 4, 4);
 }
 
 .search {
   display: flex;
   justify-content: space-around;
-  border: 2px solid blue;
+  border: 2px solid rgb(8, 85, 18);
 }
 
 .cities-container {
@@ -80,33 +80,39 @@ header {
 
 .overlay {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 .city-date-sky {
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
 }
-
+.sky-display {
+  z-index: 3;
+}
 .phvwindsun {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   background-color: #212121;
   flex: 3;
   width: 100%;
 }
 .temperature-display {
+  z-index: 2;
   display: flex;
   flex-direction: column;
 }
 .footer {
-  padding: 8px 64px;
+  font-size: 12rem;
+  height: 30px;
+  padding: 8px 6px;
   display: flex;
   flex-direction: column;
   justify-content: center;

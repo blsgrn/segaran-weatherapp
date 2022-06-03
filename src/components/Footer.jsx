@@ -14,7 +14,8 @@ function Footer({ footer, ftColor, ftFontSize }) {
 }
 
 Footer.defaultProps = {
+  flex: 1,
   ftColor: "#fff",
-  ftFontSize: "6px",
+  ftFontSize: "12px",
 };
 export default Footer;

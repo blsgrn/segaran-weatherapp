@@ -27,67 +27,54 @@ function City({ code }) {
 
   useEffect(() => {
     let mounted = true;
-    getWeather(code).then((items) => {
+    getWeather(code).then((data) => {
       if (mounted) {
-        setWeather(items);
+        setWeather(data);
+        setCity(data.name);
+        setCountry(data.sys.country);
+        setCloud(data.weather[0].icon);
+        setDescription(data.weather[0].description);
+        setTemp(data.main.temp);
+        setTempMin(data.main.temp_min);
+        setTempMax(data.main.temp_max);
+        setPressure(data.main.pressure);
+        setHumidity(data.main.humidity);
+        setVisibility(data.visibility);
+        setSpeed(data.wind.speed);
+        setDeg(data.wind.deg);
+        setSunrise(data.sys.sunrise);
+        setSunset(data.sys.sunset);
       }
     });
     return () => (mounted = false);
   }, [code]);
 
-  const { name, visibility } = weather;
-  const { sunrise, sunset, country } = weather.sys;
-  const { description, icon } = weather.weather[0];
-  const { temp, temp_min, temp_max, pressure, humidity } = weather.main;
-  const { speed, deg } = weather.wind;
-
-  // console.log(weather);
-  console.log(name, visibility);
-  console.log(country, sunrise, sunset, description, icon);
-  console.log(temp, temp_min, temp_max, pressure, humidity, visibility);
-  console.log(speed, deg);
-
-  const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-  const sunriseGMT = new Date(sunrise * 1000);
-  const sunsetGMT = new Date(sunset * 1000);
-
-  setCity(name);
-  setCountry(country);
-  setCloud(iconUrl);
-  setDescription(description);
-
-  setTemp(temp);
-  setTempMin(temp_min);
-  setTempMax(temp_max);
-
-  setPressure(pressure);
-  setHumidity(humidity);
-  setVisibility(visibility);
-  setSpeed(speed);
-  setDeg(deg);
-  setSunrise(sunriseGMT);
-  setSunset(sunsetGMT);
+  console.log(weather);
+  console.log(city, vis);
+  console.log(nation, sunriseT, sunsetT, desc, cloud);
+  console.log(temperature, t_min, t_max, pres, hum, vis);
+  console.log(windspeed, winddeg);
 
   return (
     <div className="card">
       <Colorized
         city={city}
-        country={nation}
+        nation={nation}
         cloud={cloud}
-        description={desc}
-        temp={temperature}
-        min={t_min}
-        max={t_max}
+        desc={desc}
+        temperature={temperature}
+        t_min={t_min}
+        t_max={t_max}
       />
 
       <PHV
-        pressure={pres}
-        humidity={hum}
-        visibility={vis}
-        speed={windspeed}
-        deg={winddeg}
-        sunrise={sunriseT}
-        sunset={sunsetT}
+        pres={pres}
+        hum={hum}
+        vis={vis}
+        windspeed={windspeed}
+        winddeg={winddeg}
+        sunriseT={sunriseT}
+        sunsetT={sunsetT}
       />
     </div>
   );
