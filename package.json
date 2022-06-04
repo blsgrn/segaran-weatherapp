@@ -1,6 +1,6 @@
 {
   "name": "fidenz-weather-app",
-  "homepage": "https://blsgrn.github.io/fidenz-weather-app/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
