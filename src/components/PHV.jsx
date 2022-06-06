@@ -65,22 +65,32 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
       </div>
 
       <div className="sun">
-        <div id="sunrise">
-          <h4>Sunrise:</h4>
-          <span
-            style={{ padding: "0 5px", fontSize: "14px", fontWeight: "normal" }}
-          >
-            {riseTime}
-          </span>
-        </div>
+        <div className="sunrise-sunset">
+          <div id="sunrise">
+            <h4>Sunrise:</h4>
+            <span
+              style={{
+                padding: "0 5px",
+                fontSize: "14px",
+                fontWeight: "normal",
+              }}
+            >
+              {riseTime}
+            </span>
+          </div>
 
-        <div id="sunset">
-          <h4>Sunset:</h4>
-          <span
-            style={{ padding: "0 5px", fontSize: "14px", fontWeight: "normal" }}
-          >
-            {setTime}
-          </span>
+          <div id="sunset">
+            <h4>Sunset:</h4>
+            <span
+              style={{
+                padding: "0 5px",
+                fontSize: "14px",
+                fontWeight: "normal",
+              }}
+            >
+              {setTime}
+            </span>
+          </div>
         </div>
       </div>
       <div />
