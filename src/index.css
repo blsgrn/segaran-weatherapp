@@ -139,6 +139,10 @@ input:focus {
   flex: 3;
   width: 100%;
 }
+.phv {
+  margin-left: 5px;
+}
+
 #humidity {
   display: flex;
   justify-content: flex-start;
@@ -192,6 +196,8 @@ input:focus {
 }
 
 .sun {
+  margin-right: 5px;
+  margin-left: 3px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
