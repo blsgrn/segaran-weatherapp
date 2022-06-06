@@ -10,23 +10,37 @@ function Temperature({ temperature, t_min, t_max }) {
         }}
         className="temp-display"
       >
+        {`${temperature} `}
         <p>
-          {`${temperature} `}
-          <sup style={{ fontSize: "18px" }}>O</sup>C
+          <sup style={{ fontSize: "20px" }}>O</sup>C{" "}
         </p>
       </div>
       <div className="temp-min-max">
         <div className="temp-min">
-          <p>
+          <h4>Temp Min:</h4>{" "}
+          <span
+            style={{
+              padding: "0 5px",
+              fontSize: "14px",
+              fontWeight: "normal",
+            }}
+          >
             {`${t_min} `}
             <sup style={{ fontSize: "8px" }}>O</sup>C
-          </p>
+          </span>
         </div>
         <div className="temp-max">
-          <p>
+          <h4>Temp Max:</h4>
+          <span
+            style={{
+              padding: "0 5px",
+              fontSize: "14px",
+              fontWeight: "normal",
+            }}
+          >
             {`${t_max} `}
             <sup style={{ fontSize: "8px" }}>O</sup>C
-          </p>
+          </span>
         </div>
       </div>
     </div>

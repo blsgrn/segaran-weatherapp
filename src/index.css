@@ -157,7 +157,23 @@ input:focus {
 .temperature-display {
   z-index: 2;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
+}
+.temp-display {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.temp-max {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.temp-min {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .wind {
@@ -172,6 +188,25 @@ input:focus {
   font-size: 12px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.sun {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#sunrise {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#sunset {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 .footer {
