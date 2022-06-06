@@ -82,9 +82,6 @@ function PHV({ pres, hum, vis, windspeed, winddeg, sunriseT, sunsetT }) {
             {setTime}
           </span>
         </div>
-
-        {/* <div id="sunrise">{riseTime}</div>
-        <div id="sunset">{setTime}</div> */}
       </div>
       <div />
     </div>
