@@ -49,11 +49,11 @@ function City({ code }) {
     return () => (mounted = false);
   }, [code]);
 
-  console.log(weather);
-  console.log(capital, vis);
-  console.log(nation, sunriseT, sunsetT, desc, cloud);
-  console.log(temperature, t_min, t_max, pres, hum, vis);
-  console.log(windspeed, winddeg);
+  // console.log(weather);
+  // console.log(capital, vis);
+  // console.log(nation, sunriseT, sunsetT, desc, cloud);
+  // console.log(temperature, t_min, t_max, pres, hum, vis);
+  // console.log(windspeed, winddeg);
 
   return (
     <div className="card">
