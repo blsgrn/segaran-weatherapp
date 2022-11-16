@@ -14,7 +14,7 @@ function Footer({ ftText, ftColor, ftFontSize }) {
 }
 
 Footer.defaultProps = {
-  ftText: "Company Name®",
+  ftText: "Segaran®",
   ftColor: "#fff",
   ftFontSize: "16px",
 };
